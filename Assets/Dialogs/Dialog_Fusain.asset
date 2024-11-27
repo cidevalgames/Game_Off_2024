@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 319479d07d6b66442aea06bf7d2a3f9b, type: 3}
-  m_Name: Dialog_Bougie
+  m_Name: Dialog_Fusain
   m_EditorClassIdentifier: 
   texts2Hearts:
-  - Why are you bringing the candle so close to the document?
-  - ' It could burn it, and we cannot afford to lose such important records.'
-  - Do not do this!
+  - Why are you smudging the documents with charcoal?
+  - They must remain clean and pristine before they can be placed on the shelves.
+    Do not do this !
   texts1Heart:
-  - This is the LAST TIME! STOP bringing the candle near the documents!
-  - It is DANGEROUS, and you are NOT allowed to do it!
-  - "Next time, you WON\u2019T LIKE the outcome!"
+  - This is the LAST TIME!
+  - STOP marking the documents with charcoal!
+  - "They MUST be clean and perfect for our records! Next time, you WON\u2019T LIKE
+    the outcome!"
   textDeath: []
