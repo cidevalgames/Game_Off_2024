@@ -1,16 +1,17 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class DialogTextPanel : DevObject
+public class DialogTextPanel : DevObject, IPointerClickHandler
 {
+    [SerializeField] private TextMeshProUGUI textToSet;
 
     [HideInInspector]
     public List<string> textQueue = new List<string>();
 
-    private int _nextTextIndex;
-    
-    // TODO ajouter une méthode qui écoute un clic sur le dialogue, et call la méthode dialog(_nextTextIndex)
+    private int _nextTextIndex = 0;
     
     private void Show()
     {
@@ -52,7 +53,7 @@ public class DialogTextPanel : DevObject
 
     private void SetText(string text)
     {
-        // TODO ajouter un objet de texte à l'objet DialogTextPanel puis changer son texte avec cette méthode
+        textToSet.text = text;
     }
 
     private void ResetQueue()
@@ -61,8 +62,15 @@ public class DialogTextPanel : DevObject
         _nextTextIndex = 0;
     }
 
-    private void Awake()
+    private void Start()
     {
         GameState().dialogTextPanel = this;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log("Click on dialog");
+
+        Dialog(_nextTextIndex);
     }
 }
