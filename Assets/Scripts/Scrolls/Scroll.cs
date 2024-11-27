@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Scroll : DevObject
+public class Scroll : DevObject
 {
     [SerializeField]
     [Header("Destination pour fin conspiration")]
@@ -10,5 +10,7 @@ public abstract class Scroll : DevObject
     [Header("Destination pour fin héroïque")]
     private EScrollDestination hDestination;
     
-    // TODO Ajouter l'attribut texte
+    [SerializeField]
+    [Header("Texte du parchemin"),TextArea(30,100)]
+    private string text;
 }

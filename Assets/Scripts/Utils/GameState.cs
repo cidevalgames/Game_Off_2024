@@ -16,6 +16,12 @@ public class GameState : MonoBehaviour
     
     [HideInInspector]
     public DialogTextPanel dialogTextPanel;
+    
+    [HideInInspector]
+    public VillageRack villageRack;
+    
+    [HideInInspector]
+    public VilleRack villeRack;
 
     [Header("Périodes d'une journée")] [SerializeField] [Min(0)]
     public int daysNumber;
