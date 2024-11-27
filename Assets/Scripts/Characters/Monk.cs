@@ -1,8 +1,11 @@
 using System.Collections.Generic;
+using Assets.Scripts.User_Interface;
 using UnityEngine;
 
 public class Monk : DevObject
 {
+    [SerializeField] private List<DialogSO> dialogsList;
+
     [Header("Nombre maximum d'apparitions du moine par jour :")]
     [SerializeField]
     private int maxAppearancePerDay;
@@ -15,10 +18,31 @@ public class Monk : DevObject
     
     private int _appearanceCountThisDay;
     
-    public void QueueDialog(List<string> dialog)
+    public void QueueDialog(int dialogIndex, int remainingHearts)
     {
-        GameState().dialogTextPanel.textQueue = dialog;
+        List<string> dialog = new();
+
+        switch (remainingHearts)
+        {
+            case 2:
+                dialog = dialogsList[dialogIndex].texts2Hearts;
+                break;
+            case 1:
+                dialog = dialogsList[dialogIndex].texts1Heart;
+                break;
+            case 0:
+                dialog = dialogsList[dialogsList.Count - 1].textDeath;
+                break;
+        }
+
+        GameState().dialogTextPanel.textQueue = new List<string>(dialog);
         GameState().dialogTextPanel.Dialog(0);
+    }
+
+    [ContextMenu("Trigger text 1")]
+    public void TriggerText1()
+    {
+        QueueDialog(0, 1);
     }
 
     public void resetAppearanceCount()

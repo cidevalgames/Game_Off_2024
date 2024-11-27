@@ -1,33 +1,46 @@
 using System;
 using System.Collections.Generic;
+using Assets.Scripts.User_Interface;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DialogTextPanel : DevObject, IPointerClickHandler
 {
-    [SerializeField] private TextMeshProUGUI textToSet;
 
     [HideInInspector]
     public List<string> textQueue = new List<string>();
 
     private int _nextTextIndex = 0;
-    
+    private TextMeshProUGUI _textToSet;
+
+    private void Awake()
+    {
+        _textToSet = GetComponentInChildren<TextMeshProUGUI>();
+    }
+
     private void Show()
     {
-        var spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer)
+        var image = GetComponent<Image>();
+        var textMesh = GetComponentInChildren<TextMeshProUGUI>();
+
+        if (image && textMesh)
         {
-            spriteRenderer.enabled = true;
+            image.enabled = true;
+            textMesh.enabled = true;
         }
     }
     
     private void Hide()
     {
-        var spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer)
+        var image = GetComponent<Image>();
+        var textMesh = GetComponentInChildren<TextMeshProUGUI>();
+
+        if (image && textMesh)
         {
-            spriteRenderer.enabled = false;
+            image.enabled = false;
+            textMesh.enabled = false;
         }
     }
 
@@ -53,8 +66,10 @@ public class DialogTextPanel : DevObject, IPointerClickHandler
 
     private void SetText(string text)
     {
-        textToSet.text = text;
+        _textToSet.text = text;
     }
+
+    
 
     private void ResetQueue()
     {

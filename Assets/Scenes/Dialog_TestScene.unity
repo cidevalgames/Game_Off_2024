@@ -618,7 +618,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323114213}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -931,6 +931,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c692b91432b467a4887ff134d95924a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogsList:
+  - {fileID: 11400000, guid: 40bb2823d1c34004ab28a8f852212480, type: 2}
+  - {fileID: 11400000, guid: ec886845d526daa418188f4d3cc88c41, type: 2}
+  - {fileID: 11400000, guid: 98d9cd15ad519214882123c363b93121, type: 2}
+  - {fileID: 11400000, guid: cc609ba69d96e114db651f4fc5112d88, type: 2}
+  - {fileID: 11400000, guid: 3496938b8a4bbc143a560dab5d0510b9, type: 2}
+  - {fileID: 11400000, guid: fa13bcd5c1b42df4ebdab66571109681, type: 2}
+  - {fileID: 11400000, guid: d5dc84a127c65544e9b1e8c79aa34957, type: 2}
   maxAppearancePerDay: 5
   appearanceProbability: 1
 --- !u!4 &1753471030
@@ -1046,7 +1054,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915472414}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
