@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texts2Hearts:
   - Why are you bringing the candle so close to the document?
-  - ' It could burn it, and we cannot afford to lose such important records.'
+  - It could burn it, and we cannot afford to lose such important records.
   - Do not do this!
   texts1Heart:
   - This is the LAST TIME! STOP bringing the candle near the documents!

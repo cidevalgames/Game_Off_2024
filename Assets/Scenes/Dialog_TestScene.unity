@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
-  hDestination: 0
+  cDestination: 1
+  hDestination: 1
   text: 
 --- !u!4 &42322425
 Transform:
@@ -195,8 +195,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
-  hDestination: 0
+  cDestination: 1
+  hDestination: 1
   text: 
 --- !u!4 &79628183
 Transform:
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
+  cDestination: 1
   hDestination: 0
   text: 
 --- !u!4 &87772512
@@ -334,8 +334,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
-  hDestination: 0
+  cDestination: 1
+  hDestination: 1
   text: 
 --- !u!4 &150574433
 Transform:
@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
+  cDestination: 1
   hDestination: 0
   text: 
 --- !u!4 &318625721
@@ -579,7 +579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cDestination: 0
-  hDestination: 0
+  hDestination: 1
   text: 
 --- !u!4 &356077989
 Transform:
@@ -625,7 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
+  cDestination: 1
   hDestination: 0
   text: 
 --- !u!4 &365941673
@@ -672,8 +672,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
-  hDestination: 0
+  cDestination: 1
+  hDestination: 1
   text: 
 --- !u!4 &410271614
 Transform:
@@ -720,7 +720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cDestination: 0
-  hDestination: 0
+  hDestination: 1
   text: 
 --- !u!4 &412366140
 Transform:
@@ -1026,8 +1026,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
-  hDestination: 0
+  cDestination: 1
+  hDestination: 1
   text: 
 --- !u!4 &519452057
 Transform:
@@ -1074,7 +1074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cDestination: 0
-  hDestination: 0
+  hDestination: 1
   text: 
 --- !u!4 &550038706
 Transform:
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
+  cDestination: 1
   hDestination: 0
   text: 
 --- !u!4 &661064760
@@ -1307,8 +1307,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
-  hDestination: 0
+  cDestination: 1
+  hDestination: 1
   text: 
 --- !u!4 &663508662
 Transform:
@@ -1355,7 +1355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cDestination: 0
-  hDestination: 0
+  hDestination: 1
   text: 
 --- !u!4 &1001662444
 Transform:
@@ -1448,7 +1448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
+  cDestination: 1
   hDestination: 0
   text: 
 --- !u!4 &1096598109
@@ -1540,8 +1540,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
-  hDestination: 0
+  cDestination: 1
+  hDestination: 1
   text: 
 --- !u!4 &1278708051
 Transform:
@@ -1680,6 +1680,8 @@ MonoBehaviour:
   periodManager: {fileID: 0}
   monk: {fileID: 0}
   dialogTextPanel: {fileID: 0}
+  villageRack: {fileID: 0}
+  villeRack: {fileID: 0}
   daysNumber: 2
 --- !u!4 &1446765033
 Transform:
@@ -1912,7 +1914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
+  cDestination: 1
   hDestination: 0
   text: 
 --- !u!4 &1589994251
@@ -2004,8 +2006,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
-  hDestination: 0
+  cDestination: 1
+  hDestination: 1
   text: 
 --- !u!4 &1692386973
 Transform:
@@ -2051,8 +2053,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
-  hDestination: 0
+  cDestination: 1
+  hDestination: 1
   text: 
 --- !u!4 &1697918806
 Transform:
@@ -2207,8 +2209,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
-  hDestination: 0
+  cDestination: 1
+  hDestination: 1
   text: 
 --- !u!4 &1809764461
 Transform:
@@ -2437,7 +2439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cDestination: 0
-  hDestination: 0
+  hDestination: 1
   text: 
 --- !u!4 &1982054007
 Transform:
@@ -2530,7 +2532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
+  cDestination: 1
   hDestination: 0
   text: 
 --- !u!4 &2042913221
@@ -2577,8 +2579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a3e10cf837b494d890a56e7265001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cDestination: 0
-  hDestination: 0
+  cDestination: 1
+  hDestination: 1
   text: 
 --- !u!4 &2134827337
 Transform:
