@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -116,10 +116,10 @@ TextureImporter:
       name: soleil_0
       rect:
         serializedVersion: 2
-        x: 290
-        y: 250
-        width: 48
-        height: 47
+        x: 286
+        y: 243
+        width: 61
+        height: 62
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,14 +136,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8de62c66f21fac349bab2e34bc97cc7c
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      soleil_0: 8412625726429558370
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,7 @@
 fileFormatVersion: 2
 guid: dce5d07c53f2f3640a98169d28e2baa3
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 3083873997622472335
-    second: pignou_0
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -125,10 +122,10 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f8ee950df0f1cca20800000000000000
-      internalID: 3083873997622472335
+      spriteID: 9f2a0bd8d43ea8e4db01a27e120c250c
+      internalID: 1317064656
       vertices: []
       indices: 
       edges: []
@@ -136,14 +133,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 11727ef27bb48dc4b9b6e664e7058daf
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pignou_0: 1317064656
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -40,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -119,10 +119,10 @@ TextureImporter:
       name: bureau_layout_rope_highlight2_0
       rect:
         serializedVersion: 2
-        x: 576
-        y: 252
-        width: 30
-        height: 108
+        x: 577
+        y: 203
+        width: 60
+        height: 157
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,38 +136,18 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: bureau_layout_rope_highlight2_1
-      rect:
-        serializedVersion: 2
-        x: 599
-        y: 247
-        width: 39
-        height: 113
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3b75e03b6ccf1e8b0800000000000000
-      internalID: -5124536970633128013
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c2fc364ed0f0d644bb9b398f54443cc9
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bureau_layout_rope_highlight2_0: 2941197725799201136
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
