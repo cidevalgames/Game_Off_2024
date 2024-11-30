@@ -69,8 +69,11 @@ public class PeriodManager : DevObject
         }
         else
         {
-            Application.Quit();
+#if UNITY_EDITOR
             EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
         }
     }
     
