@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6c925e6814e2f4e42b76039c927cc3c4
+guid: c37266d7dd8268447a007436144ae8fe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1863891880571264688
-    second: Sans-titre-1_0001_hover_0
+      213: -66942039690502847
+    second: Sans-titre-1_0002_normal_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sans-titre-1_0001_hover_0
+      name: Sans-titre-1_0002_normal_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 193
-        height: 101
+        width: 191
+        height: 97
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 051a0deb5302226e0800000000000000
-      internalID: -1863891880571264688
+      spriteID: 14d15bfc19c221ff0800000000000000
+      internalID: -66942039690502847
       vertices: []
       indices: 
       edges: []
@@ -144,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sans-titre-1_0001_hover_0: -1863891880571264688
+      Sans-titre-1_0002_normal_0: -66942039690502847
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
