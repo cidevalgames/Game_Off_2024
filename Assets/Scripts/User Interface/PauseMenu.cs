@@ -8,6 +8,8 @@ namespace Assets.Scripts.User_Interface
         public void OnClick_Resume()
         {
             MenuManager.ChangeMenuState(Menu.PAUSE_MENU, MenuState.CLOSE);
+
+            GameplayStateManager.Instance.SetState(GameplayState.Gameplay);
         }
 
         public void OnClick_MainMenu()
