@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 82ee4ec85af81114eb6b7920ff0bcb57
+guid: 5e1772e6a0849ca4eae9aef961080526
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8718938761458063714
-    second: Parchemin - Fusain Grand_0
+      213: -276051338159407845
+    second: Fusain_Highlight_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,22 +113,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Parchemin - Fusain Grand_0
+      name: Fusain_Highlight_2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1608
-        height: 3354
+        x: 10
+        y: 26
+        width: 110
+        height: 84
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9668e0346b100780800000000000000
-      internalID: -8718938761458063714
+      spriteID: b1dbc3145c44b2cf0800000000000000
+      internalID: -276051338159407845
       vertices: []
       indices: 
       edges: []
@@ -136,14 +136,15 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0916060a8816859419a257eab9418b38
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Fusain_Highlight_2_0: -276051338159407845
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

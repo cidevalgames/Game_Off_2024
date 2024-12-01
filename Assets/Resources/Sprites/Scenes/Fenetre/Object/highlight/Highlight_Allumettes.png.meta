@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: c9946dad5205a5e40b443ccfb8fda679
+guid: 8503210dd25a1e844b625c430c0c90c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1896396279579018365
-    second: Village_March8_Chiffon_0
+      213: -3843836278013169624
+    second: Highlight_Allumettes_0
+  - first:
+      213: 1117660965951266730
+    second: Highlight_Allumettes_1
+  - first:
+      213: 5631158355364664785
+    second: Highlight_Allumettes_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,22 +119,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Village_March8_Chiffon_0
+      name: Highlight_Allumettes_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 0
-        width: 1569
-        height: 3397
+        x: 30
+        y: 14
+        width: 187
+        height: 257
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 38bf15a91a5aea5e0800000000000000
-      internalID: -1896396279579018365
+      spriteID: 820f34a4543f7aac0800000000000000
+      internalID: -3843836278013169624
       vertices: []
       indices: 
       edges: []
@@ -136,14 +142,17 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6d839786a83804c4e989a27681adfcbc
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Highlight_Allumettes_0: -3843836278013169624
+      Highlight_Allumettes_1: 1117660965951266730
+      Highlight_Allumettes_2: 5631158355364664785
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

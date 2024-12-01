@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cursor : MonoBehaviour
+public class CursorControl : MonoBehaviour
 {
     public Sprite baseSprite;    
     public Sprite clickedSprite; 
@@ -11,10 +11,12 @@ public class Cursor : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        Cursor.visible = false;
         if (spriteRenderer != null && baseSprite != null)
         {
             spriteRenderer.sprite = baseSprite;
         }
+        
     }
 
     void Update()
@@ -22,6 +24,10 @@ public class Cursor : MonoBehaviour
     
         Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(cursorPos.x, cursorPos.y);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.visible = true;  
+        }
         if (Input.GetMouseButtonDown(0)) 
         {
             if (spriteRenderer != null && clickedSprite != null)
