@@ -4,7 +4,7 @@ public class VillageRack : Rack
 {
     private const EScrollDestination Destination = EScrollDestination.Village;
 
-    private void Start()
+    protected override void Start()
     {
         GameState().villageRack = this;
     }

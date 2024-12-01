@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.User_Interface
 {
-    [RequireComponent(typeof(AudioSource))]
     public class MainMenu : MonoBehaviour
     {
         [SerializeField, Tooltip("Fade in duration in seconds")] private float fadeInDuration = 1f;
@@ -29,7 +28,7 @@ namespace Assets.Scripts.User_Interface
             m_videoPlayer = FindFirstObjectByType<VideoPlayer>();
             m_videoPlayer.loopPointReached += OnTransitionEnd;
 
-            m_audioSource = GetComponent<AudioSource>();
+            m_audioSource = FindFirstObjectByType<AudioSource>();
         }
 
         private void OnTransitionEnd(VideoPlayer videoPlayer)
@@ -49,10 +48,12 @@ namespace Assets.Scripts.User_Interface
         {
             MenuManager.ChangeMenuState(Menu.MAIN_MENU, MenuState.CLOSE);
 
-            GameplayStateManager.Instance.SetState(GameplayState.Gameplay);
-
             m_audioSource.clip = onStartSound;
             m_audioSource.Play();
+
+            GameplayStateManager.Instance.SetState(GameplayState.Tutorial);
+
+            FindFirstObjectByType<TutoDialogManager>().QueueDialog(0);
         }
 
         public void OnClick_Credits()

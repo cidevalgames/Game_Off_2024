@@ -4,6 +4,8 @@ public class PauseController : MonoBehaviour
 {
     [SerializeField] private KeyCode pauseKeyCode;
 
+    private GameplayState _previousGameplayState;
+
     private void Update()
     {
         if (Input.GetKeyDown(pauseKeyCode))
@@ -12,9 +14,18 @@ public class PauseController : MonoBehaviour
 
             if (currentGameplayState == GameplayState.Menu) return;
 
-            GameplayState newGameplayState = currentGameplayState == GameplayState.Gameplay 
-                ? GameplayState.Paused 
-                : GameplayState.Gameplay;
+            GameplayState newGameplayState = GameplayState.Gameplay;
+
+            if (currentGameplayState == GameplayState.Gameplay || currentGameplayState == GameplayState.Tutorial)
+            {
+                _previousGameplayState = currentGameplayState;
+
+                newGameplayState = GameplayState.Paused;
+            }
+            else if (currentGameplayState == GameplayState.Paused)
+            {
+                newGameplayState = _previousGameplayState;
+            }
 
             GameplayStateManager.Instance.SetState(newGameplayState);
         }
