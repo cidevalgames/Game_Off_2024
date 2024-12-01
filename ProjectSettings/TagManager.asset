@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: parchemin
+    uniqueID: 3366487171
+    locked: 0
+  - name: rouleau
+    uniqueID: 903234937
+    locked: 0
+  - name: object
+    uniqueID: 2447117915
+    locked: 0
+  - name: monk
+    uniqueID: 1569405955
+    locked: 0
+  - name: cursor
+    uniqueID: 2420008241
+    locked: 0

@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: 800044327426450314, guid: a08cb8a73b626994cae758a50fa6a65a, type: 3}
 --- !u!4 &42322425
 Transform:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &79628183
 Transform:
   m_ObjectHideFlags: 0
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 0
-  text: 
+  sprite: {fileID: 7228413188895044367, guid: 05c62ff44804bca4b84d944bca04084c, type: 3}
 --- !u!4 &87772512
 Transform:
   m_ObjectHideFlags: 0
@@ -336,7 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: -4994125308431057923, guid: ea3840bfa92e00141a23164459a6f5e8, type: 3}
 --- !u!4 &150574433
 Transform:
   m_ObjectHideFlags: 0
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 0
-  text: 
+  sprite: {fileID: -6506307206663999614, guid: b0ef462c16d90ff45926eca8eb08e1db, type: 3}
 --- !u!4 &318625721
 Transform:
   m_ObjectHideFlags: 0
@@ -580,7 +580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 1
-  text: 
+  sprite: {fileID: 258577960506719356, guid: 80676fbbfdb68864ca9782bf48bec9e8, type: 3}
 --- !u!4 &356077989
 Transform:
   m_ObjectHideFlags: 0
@@ -627,7 +627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 0
-  text: 
+  sprite: {fileID: -228071761424464884, guid: 1f822ba72d3481d478969f5ccdd7f904, type: 3}
 --- !u!4 &365941673
 Transform:
   m_ObjectHideFlags: 0
@@ -674,7 +674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: -8941888798981560637, guid: b6f39b634ec286a45915c42f292f4e7f, type: 3}
 --- !u!4 &410271614
 Transform:
   m_ObjectHideFlags: 0
@@ -721,7 +721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 1
-  text: 
+  sprite: {fileID: -6938057785167758982, guid: 49c0d4f7d3c8f444aa6d99a556eeb9d9, type: 3}
 --- !u!4 &412366140
 Transform:
   m_ObjectHideFlags: 0
@@ -768,7 +768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 0
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &419144568
 Transform:
   m_ObjectHideFlags: 0
@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: 1250502760652100620, guid: acac5d5db577c59479d75d66547fd600, type: 3}
 --- !u!4 &519452057
 Transform:
   m_ObjectHideFlags: 0
@@ -1075,7 +1075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 1
-  text: 
+  sprite: {fileID: 4650462629846522404, guid: 0a2e6d2e4784fba4fab3539a0460229a, type: 3}
 --- !u!4 &550038706
 Transform:
   m_ObjectHideFlags: 0
@@ -1168,7 +1168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 0
-  text: 
+  sprite: {fileID: 4890882579886269995, guid: 1055be04958414b40a854121faa3c9ea, type: 3}
 --- !u!4 &578373792
 Transform:
   m_ObjectHideFlags: 0
@@ -1215,7 +1215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 0
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &593414999
 Transform:
   m_ObjectHideFlags: 0
@@ -1262,7 +1262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 0
-  text: 
+  sprite: {fileID: 6247444563331632413, guid: a62e2284d41fca94bb627baa6ae7b1e4, type: 3}
 --- !u!4 &661064760
 Transform:
   m_ObjectHideFlags: 0
@@ -1309,7 +1309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: -6320026220882191651, guid: e15247ee25577a945a9e5c615e5c34b3, type: 3}
 --- !u!4 &663508662
 Transform:
   m_ObjectHideFlags: 0
@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 1
-  text: 
+  sprite: {fileID: -1624487917604827813, guid: ed10eda925c0f5648aa519e8ad291173, type: 3}
 --- !u!4 &1001662444
 Transform:
   m_ObjectHideFlags: 0
@@ -1403,7 +1403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 0
-  text: 
+  sprite: {fileID: 4131030260518011428, guid: 3c181c30a1078964796aab462c18aa9c, type: 3}
 --- !u!4 &1084143146
 Transform:
   m_ObjectHideFlags: 0
@@ -1450,7 +1450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 0
-  text: 
+  sprite: {fileID: 262553755232078627, guid: 123bc8983ea4f1e4cb77e1753772dc88, type: 3}
 --- !u!4 &1096598109
 Transform:
   m_ObjectHideFlags: 0
@@ -1542,7 +1542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: -7974420263697450642, guid: 3317da1762f609d43bd6a240c35b2e23, type: 3}
 --- !u!4 &1278708051
 Transform:
   m_ObjectHideFlags: 0
@@ -1916,7 +1916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 0
-  text: 
+  sprite: {fileID: 2211252900017974874, guid: 8c774f0edd139d2439d52cf9e7a62de3, type: 3}
 --- !u!4 &1589994251
 Transform:
   m_ObjectHideFlags: 0
@@ -2008,7 +2008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: -107895333221124804, guid: 0f33e0a7463ace244a0885409645f8ea, type: 3}
 --- !u!4 &1692386973
 Transform:
   m_ObjectHideFlags: 0
@@ -2055,7 +2055,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: 4138839587462809003, guid: e74df53fb349c154089aa1c96d68e1d6, type: 3}
 --- !u!4 &1697918806
 Transform:
   m_ObjectHideFlags: 0
@@ -2177,7 +2177,7 @@ SpriteRenderer:
   m_Size: {x: 0.23, y: 0.67}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1809764459
@@ -2211,7 +2211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: 4667606384614295084, guid: 8392ea9cd5aefc748adf37d3ad8bd408, type: 3}
 --- !u!4 &1809764461
 Transform:
   m_ObjectHideFlags: 0
@@ -2440,7 +2440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 1
-  text: 
+  sprite: {fileID: 3674357294576147212, guid: 345f2b7f54404154a8f18dcd789c7c69, type: 3}
 --- !u!4 &1982054007
 Transform:
   m_ObjectHideFlags: 0
@@ -2487,7 +2487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 0
-  text: 
+  sprite: {fileID: 6900807898830329279, guid: dd09f0a23364a494a8daffc2445a726b, type: 3}
 --- !u!4 &2028598331
 Transform:
   m_ObjectHideFlags: 0
@@ -2534,7 +2534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 0
-  text: 
+  sprite: {fileID: 4518725369275227745, guid: e8896b2beda443c41b63f179f11a11cd, type: 3}
 --- !u!4 &2042913221
 Transform:
   m_ObjectHideFlags: 0
@@ -2581,7 +2581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: -4001225414234473789, guid: 62f8ca5fedaa2ea45ba66340b58fa0e2, type: 3}
 --- !u!4 &2134827337
 Transform:
   m_ObjectHideFlags: 0

@@ -9,10 +9,14 @@ public abstract class Container : DevObject
 
     protected void TransferScrollTo(Scroll scroll, Container transferTarget)
     {
-        if (transferTarget.AddScroll(scroll)) scrolls.Remove(scroll);
+        
+        if (!transferTarget.AddScroll(scroll)) return;
+        
+        scrolls.Remove(scroll);
+        
     }
 
-    private bool AddScroll(Scroll scroll)
+    protected virtual bool AddScroll(Scroll scroll)
     {
         if (!IsScrollValid(scroll)) return false;
         scrolls.Add(scroll);
