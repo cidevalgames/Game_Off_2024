@@ -7,11 +7,17 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.User_Interface
 {
+    [RequireComponent(typeof(AudioSource))]
     public class MainMenu : MonoBehaviour
     {
         [SerializeField, Tooltip("Fade in duration in seconds")] private float fadeInDuration = 1f;
+
+        [Header("Sound effects")]
+        [SerializeField] private AudioClip onStartSound;
+        [SerializeField] private AudioClip onButtonSound;
          
         private VideoPlayer m_videoPlayer;
+        private AudioSource m_audioSource;
 
         [ContextMenu("Skip transition")]
         public void SkipTransition() => m_videoPlayer.time = m_videoPlayer.length;
@@ -22,6 +28,8 @@ namespace Assets.Scripts.User_Interface
 
             m_videoPlayer = FindFirstObjectByType<VideoPlayer>();
             m_videoPlayer.loopPointReached += OnTransitionEnd;
+
+            m_audioSource = GetComponent<AudioSource>();
         }
 
         private void OnTransitionEnd(VideoPlayer videoPlayer)
@@ -42,11 +50,17 @@ namespace Assets.Scripts.User_Interface
             MenuManager.ChangeMenuState(Menu.MAIN_MENU, MenuState.CLOSE);
 
             GameplayStateManager.Instance.SetState(GameplayState.Gameplay);
+
+            m_audioSource.clip = onStartSound;
+            m_audioSource.Play();
         }
 
         public void OnClick_Credits()
         {
             MenuManager.ChangeMenuState(Menu.CREDITS_MENU, MenuState.OPEN, gameObject);
+
+            m_audioSource.clip = onButtonSound;
+            m_audioSource.Play();
         }
 
         public void OnClick_Quit()
