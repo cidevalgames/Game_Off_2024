@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86e2c3628bf01546899920ba395c7bc, type: 3}
+  m_Name: Dialog_Tuto_0
+  m_EditorClassIdentifier: 
+  texts:
+  - I shall be brief, apprentice. Here is your desk. All that you need for your work
+    lies here.
+  - Take the documents to your left and read them.
+  - Ensure all is in order, then place them to your right on the corresponding shelf.
+  - Take one now and try to read it.

@@ -36,7 +36,7 @@ public class Monk : DevObject
         }
 
         GameState().dialogTextPanel.textQueue = new List<string>(dialog);
-        GameState().dialogTextPanel.Dialog(0);
+        GameState().dialogTextPanel.Dialog(0, new UnityEngine.Events.UnityEvent());
     }
 
     [ContextMenu("Trigger text 1")]
@@ -83,7 +83,7 @@ public class Monk : DevObject
         GameState().periodManager.GetCurrentPeriod().NextHour();
     }
 
-    private void Awake()
+    private void Start()
     {
         GameState().monk = this;
     }

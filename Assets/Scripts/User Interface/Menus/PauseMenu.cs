@@ -4,13 +4,17 @@ using UnityEngine.Video;
 
 namespace Assets.Scripts.User_Interface
 {
-    [RequireComponent(typeof(AudioSource))]
     public class PauseMenu : MonoBehaviour
     {
         [Header("Sound effects")]
         [SerializeField] private AudioClip onButtonSound;
 
         private AudioSource m_audioSource;
+
+        private void Awake()
+        {
+            m_audioSource = FindFirstObjectByType<AudioSource>();
+        }
 
         public void OnClick_Resume()
         {

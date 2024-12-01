@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d86e2c3628bf01546899920ba395c7bc, type: 3}
+  m_Name: Dialog_Tuto_7
+  m_EditorClassIdentifier: 
+  texts:
+  - "Wait\u2026 ?! This is but a list of provisions for the monks. My apologies,
+    I judged this too quickly."
+  - 'Yet let this serve as a warning: you must exercise great care.'
+  - I expect you to do at least 5 documents by the sunset each day.
+  - Then you pull the cord and only then, if you have finished I will let you go
+    before the end of the day.
+  - BUT DO NOT STAY WHEN ITS NIGHT! NEVER! You should always been gone before the
+    night. I will come check myself.
+  - Well, I believe we have covered all for today. Return tomorrow morn, at the same
+    hour.
