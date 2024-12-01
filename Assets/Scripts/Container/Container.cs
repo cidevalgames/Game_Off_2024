@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Assets.Scripts.Desk.Objects;
+using Assets.Scripts.Animation;
 
 public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
@@ -8,6 +10,146 @@ public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitH
     [SerializeField]
     protected List<Scroll> scrolls;
 
+    [SerializeField] private SpriteRenderer highlightsSpriteRenderer;
+
+    [Header("Animation")]
+    [SerializeField] private Assets.Scripts.Animation.Animation m_animation;
+
+    [Header("Sprites")]
+    [SerializeField] private Sprite spriteHighlight0;
+    [SerializeField] private Sprite spriteHighlight1;
+
+    [Header("Sound effects")]
+    [SerializeField] private AudioClip onTakeSound;
+    [SerializeField] private AudioClip onDragSound;
+
+    [HideInInspector] public bool isHoldingScroll = false;
+
+    protected bool _canHover = true;
+
+    private bool _isHovering;
+
+    protected Vector2 _basePosition;
+    private Vector2 _scrollBasePosition;
+
+    private GameObject _holdingScroll;
+
+    private int _holdingScrollIndex;
+
+    #region Primary Functions
+    protected virtual void Start()
+    {
+        m_animation.UpdateAction = UpdateAnimation;
+        m_animation.EndAction = EndAnimation;
+
+        _basePosition = transform.position;
+    }
+
+    protected virtual void Update()
+    {
+        if (_canHover)
+        {
+            m_animation.Update(Time.deltaTime);
+        }
+    }
+    #endregion
+
+    #region Dragging
+    public virtual void OnBeginDrag()
+    {
+        if (scrolls.Count == 0)
+            return;
+
+        scrolls[0].OnBeginDrag(this);
+    }
+
+    public virtual void OnEndDrag()
+    {
+        if (scrolls.Count == 0)
+            return;
+
+        scrolls[0].OnEndDrag(this);
+    }
+    #endregion
+
+    #region Event Systems
+    public virtual void OnPointerEnter(PointerEventData eventData)
+    {
+        if (!_canHover)
+            return;
+
+        _isHovering = true;
+
+        highlightsSpriteRenderer.enabled = true;
+        highlightsSpriteRenderer.sprite = spriteHighlight0;
+
+        m_animation.StartAnimation();
+    }
+
+    public virtual void OnPointerExit(PointerEventData eventData)
+    {
+        if (!_canHover)
+            return;
+
+        _isHovering = false;
+
+        highlightsSpriteRenderer.enabled = false;
+    }
+
+    public virtual void OnPointerDown(PointerEventData eventData)
+    {
+        _canHover = false;
+
+        highlightsSpriteRenderer.enabled = false;
+
+        OnBeginDrag();
+    }
+
+    public virtual void OnPointerUp(PointerEventData eventData)
+    {
+        _canHover = true;
+
+        transform.position = _basePosition;
+
+        OnEndDrag();
+    }
+    #endregion
+
+    #region Animation
+    private void UpdateAnimation(float t)
+    {
+        Sprite newSprite = spriteHighlight0;
+
+        if (t >= .5f)
+        {
+            newSprite = spriteHighlight1;
+        }
+
+        highlightsSpriteRenderer.sprite = newSprite;
+    }
+
+    private void EndAnimation()
+    {
+        m_animation.StartAnimation();
+    }
+    #endregion
+
+    public void EnableHovering()
+    {
+        _canHover = true;
+    }
+
+    public void DisableHovering()
+    {
+        _canHover = false;
+    }
+
+    public bool IsHovering()
+    {
+        return _isHovering;
+    }
+
+    #region Scrolls
     protected void TransferScrollTo(Scroll scroll, Container transferTarget)
     {
         if (!transferTarget.AddScroll(scroll)) return;
@@ -27,12 +169,5 @@ public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitH
     {
         return scroll != null && !scrolls.Contains(scroll);
     }
-
-    public abstract void OnPointerEnter(PointerEventData eventData);
-
-    public abstract void OnPointerExit(PointerEventData eventData);
-
-    public abstract void OnPointerDown(PointerEventData eventData);
-
-    public abstract void OnPointerUp(PointerEventData eventData);
+    #endregion
 }

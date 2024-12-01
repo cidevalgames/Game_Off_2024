@@ -8,17 +8,17 @@ public class TutoDialogManager : DevObject
 {
     public List<TutoDialog> TutoDialogList;
 
-    private void OnEnable()
-    {
-        StartCoroutine(OnLateStart());
-    }
+    //private void OnEnable()
+    //{
+    //    StartCoroutine(OnLateStart());
+    //}
 
-    private IEnumerator OnLateStart()
-    {
-        yield return new WaitForEndOfFrame();
+    //private IEnumerator OnLateStart()
+    //{
+    //    yield return new WaitForEndOfFrame();
 
-        QueueDialog(0);
-    }
+    //    QueueDialog(0);
+    //}
 
     public void QueueDialog(int dialogIndex)
     {

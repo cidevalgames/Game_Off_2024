@@ -5,8 +5,8 @@ using Assets.Scripts.Animation;
 
 namespace Assets.Scripts.Desk.Objects
 {
-    [RequireComponent(typeof(Collider2D), typeof(AudioSource))]
-    public abstract class InteractableObject : MonoBehaviour
+    [RequireComponent(typeof(AudioSource), typeof(Collider2D))]
+    public abstract class InteractableObject : DevObject
     {
         [SerializeField] private SpriteRenderer highlightsSpriteRenderer;
 
@@ -29,6 +29,7 @@ namespace Assets.Scripts.Desk.Objects
 
         private AudioSource m_audioSource;
 
+        #region Primary Functions
         protected virtual void Start()
         {
             m_animation.UpdateAction = UpdateAnimation;
@@ -51,21 +52,14 @@ namespace Assets.Scripts.Desk.Objects
                 OnDragUpdate();
             }
         }
+        #endregion
 
+        #region Dragging
         public virtual void OnBeginDrag()
         {
             if (onTakeSound)
             {
                 m_audioSource.clip = onTakeSound;
-                m_audioSource.Play();
-            }
-        }
-
-        public virtual void OnEndDrag()
-        {
-            if (onDragSound)
-            {
-                m_audioSource.clip = onDragSound;
                 m_audioSource.Play();
             }
         }
@@ -76,6 +70,17 @@ namespace Assets.Scripts.Desk.Objects
             transform.position = new Vector2(cursorPos.x, cursorPos.y) - _mousePositionFromObject;
         }
 
+        public virtual void OnEndDrag()
+        {
+            if (onDragSound)
+            {
+                m_audioSource.clip = onDragSound;
+                m_audioSource.Play();
+            }
+        }
+        #endregion
+
+        #region Event Systems
         public virtual void OnPointerEnter(PointerEventData eventData)
         {
             if (!_canHover)
@@ -93,23 +98,6 @@ namespace Assets.Scripts.Desk.Objects
                 return;
 
             highlightsSpriteRenderer.enabled = false;
-        }
-
-        private void UpdateAnimation(float t)
-        {
-            Sprite newSprite = spriteHighlight0;
-
-            if (t >= .5f)
-            {
-                newSprite = spriteHighlight1;
-            }
-
-            highlightsSpriteRenderer.sprite = newSprite;
-        }
-
-        private void EndAnimation()
-        {
-            m_animation.StartAnimation();
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -133,5 +121,25 @@ namespace Assets.Scripts.Desk.Objects
 
             OnEndDrag();
         }
+        #endregion
+
+        #region Animation
+        private void UpdateAnimation(float t)
+        {
+            Sprite newSprite = spriteHighlight0;
+
+            if (t >= .5f)
+            {
+                newSprite = spriteHighlight1;
+            }
+
+            highlightsSpriteRenderer.sprite = newSprite;
+        }
+
+        private void EndAnimation()
+        {
+            m_animation.StartAnimation();
+        }
+        #endregion
     }
 }

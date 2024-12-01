@@ -6,6 +6,8 @@ public class VillageRack : Rack
 
     protected override void Start()
     {
-        GameState().villageRack = this;
+        base.Start();
+
+        _canHover = false;
     }
 }

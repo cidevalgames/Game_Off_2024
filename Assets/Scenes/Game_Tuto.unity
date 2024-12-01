@@ -155,6 +155,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &42322425
 Transform:
   m_ObjectHideFlags: 0
@@ -400,6 +403,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &79628183
 Transform:
   m_ObjectHideFlags: 0
@@ -503,6 +509,9 @@ MonoBehaviour:
   hDestination: 0
   openSprite: {fileID: 0}
   onDropOnDesk:
+    m_PersistentCalls:
+      m_Calls: []
+  onDropInRack:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &87772512
@@ -724,6 +733,7 @@ MonoBehaviour:
   spriteHighlight1: {fileID: -5588518975291540841, guid: f54fd77a6f799784596fdc31ee0cf411, type: 3}
   onTakeSound: {fileID: 0}
   onDragSound: {fileID: 0}
+  isHoldingScroll: 0
 --- !u!4 &110670023
 Transform:
   m_ObjectHideFlags: 0
@@ -924,6 +934,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &150574433
 Transform:
   m_ObjectHideFlags: 0
@@ -1077,6 +1090,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &318625721
 Transform:
   m_ObjectHideFlags: 0
@@ -1182,6 +1198,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &356077989
 Transform:
   m_ObjectHideFlags: 0
@@ -1285,6 +1304,9 @@ MonoBehaviour:
   hDestination: 0
   openSprite: {fileID: 0}
   onDropOnDesk:
+    m_PersistentCalls:
+      m_Calls: []
+  onDropInRack:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &365941673
@@ -1543,6 +1565,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &410271614
 Transform:
   m_ObjectHideFlags: 0
@@ -1648,6 +1673,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &412366140
 Transform:
   m_ObjectHideFlags: 0
@@ -1751,6 +1779,9 @@ MonoBehaviour:
   hDestination: 0
   openSprite: {fileID: 0}
   onDropOnDesk:
+    m_PersistentCalls:
+      m_Calls: []
+  onDropInRack:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &419144568
@@ -2043,6 +2074,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &519452057
 Transform:
   m_ObjectHideFlags: 0
@@ -2275,6 +2309,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &550038706
 Transform:
   m_ObjectHideFlags: 0
@@ -2426,6 +2463,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &578373792
 Transform:
   m_ObjectHideFlags: 0
@@ -2529,6 +2569,9 @@ MonoBehaviour:
   hDestination: 0
   openSprite: {fileID: 0}
   onDropOnDesk:
+    m_PersistentCalls:
+      m_Calls: []
+  onDropInRack:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &593414999
@@ -2636,6 +2679,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &661064760
 Transform:
   m_ObjectHideFlags: 0
@@ -2739,6 +2785,9 @@ MonoBehaviour:
   hDestination: 1
   openSprite: {fileID: 0}
   onDropOnDesk:
+    m_PersistentCalls:
+      m_Calls: []
+  onDropInRack:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &663508662
@@ -2939,7 +2988,6 @@ GameObject:
   m_Component:
   - component: {fileID: 827217155}
   - component: {fileID: 827217154}
-  - component: {fileID: 827217153}
   m_Layer: 0
   m_Name: Desk_Highlight
   m_TagString: Untagged
@@ -2947,23 +2995,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!111 &827217153
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827217151}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Animation: {fileID: 7400000, guid: 8c81dfe76044f54488182a67aefe695d, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 8c81dfe76044f54488182a67aefe695d, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_UpdateMode: 0
-  m_CullingType: 0
 --- !u!212 &827217154
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3007,15 +3038,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 89275044897735381, guid: aded9ee636c5c8a4a810547ecad395de, type: 3}
+  m_Sprite: {fileID: 89275044897735381, guid: 711ad4d014dbd5e429fe3a54af5da9bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.43, y: 2.95}
+  m_Size: {x: 3.49, y: 2.95}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &827217155
@@ -3067,6 +3098,9 @@ MonoBehaviour:
   hDestination: 0
   openSprite: {fileID: 0}
   onDropOnDesk:
+    m_PersistentCalls:
+      m_Calls: []
+  onDropInRack:
     m_PersistentCalls:
       m_Calls: []
 --- !u!212 &841379274
@@ -3344,6 +3378,9 @@ MonoBehaviour:
   hDestination: 1
   openSprite: {fileID: 0}
   onDropOnDesk:
+    m_PersistentCalls:
+      m_Calls: []
+  onDropInRack:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &1001662444
@@ -3747,6 +3784,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1084143146
 Transform:
   m_ObjectHideFlags: 0
@@ -4127,6 +4167,9 @@ MonoBehaviour:
   hDestination: 0
   openSprite: {fileID: 0}
   onDropOnDesk:
+    m_PersistentCalls:
+      m_Calls: []
+  onDropInRack:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &1096598109
@@ -4613,6 +4656,7 @@ MonoBehaviour:
   spriteHighlight1: {fileID: 6897792019718774214, guid: 1ce7e672782201f4f9a4263dc2324c25, type: 3}
   onTakeSound: {fileID: 0}
   onDragSound: {fileID: 0}
+  isHoldingScroll: 0
 --- !u!4 &1200286670
 Transform:
   m_ObjectHideFlags: 0
@@ -4813,6 +4857,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1278708051
 Transform:
   m_ObjectHideFlags: 0
@@ -4898,7 +4945,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1298284831
 Transform:
   m_ObjectHideFlags: 0
@@ -6316,6 +6363,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1589994251
 Transform:
   m_ObjectHideFlags: 0
@@ -6889,8 +6939,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrolls: []
   highlightsSpriteRenderer: {fileID: 827217154}
-  scrollOnDesk: {fileID: 1576388055}
-  scrollOnDeskSpriteRenderer: {fileID: 1298284832}
   m_animation:
     _duration: 0.5
     _curve:
@@ -6922,6 +6970,9 @@ MonoBehaviour:
   spriteHighlight1: {fileID: 1517591119344525259, guid: 0490e2979aa792340a830eedbab25a40, type: 3}
   onTakeSound: {fileID: 0}
   onDragSound: {fileID: 0}
+  isHoldingScroll: 0
+  scrollOnDesk: {fileID: 1576388055}
+  scrollOnDeskSpriteRenderer: {fileID: 1298284832}
 --- !u!4 &1666524841
 Transform:
   m_ObjectHideFlags: 0
@@ -7122,6 +7173,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1692386973
 Transform:
   m_ObjectHideFlags: 0
@@ -7225,6 +7279,9 @@ MonoBehaviour:
   hDestination: 1
   openSprite: {fileID: 0}
   onDropOnDesk:
+    m_PersistentCalls:
+      m_Calls: []
+  onDropInRack:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &1697918806
@@ -7566,6 +7623,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1753661472
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8034,6 +8094,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1806014074
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8137,6 +8200,9 @@ MonoBehaviour:
   hDestination: 1
   openSprite: {fileID: 0}
   onDropOnDesk:
+    m_PersistentCalls:
+      m_Calls: []
+  onDropInRack:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &1809764461
@@ -8589,6 +8655,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1982054007
 Transform:
   m_ObjectHideFlags: 0
@@ -8780,6 +8849,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &2028598331
 Transform:
   m_ObjectHideFlags: 0
@@ -8916,6 +8988,9 @@ MonoBehaviour:
   onDropOnDesk:
     m_PersistentCalls:
       m_Calls: []
+  onDropInRack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &2042913221
 Transform:
   m_ObjectHideFlags: 0
@@ -9019,6 +9094,9 @@ MonoBehaviour:
   hDestination: 1
   openSprite: {fileID: 0}
   onDropOnDesk:
+    m_PersistentCalls:
+      m_Calls: []
+  onDropInRack:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &2134827337
