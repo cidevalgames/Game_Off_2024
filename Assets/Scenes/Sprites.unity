@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &42322425
 Transform:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 0
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &79628183
 Transform:
   m_ObjectHideFlags: 0
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 0
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &87772512
 Transform:
   m_ObjectHideFlags: 0
@@ -635,7 +635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &150574433
 Transform:
   m_ObjectHideFlags: 0
@@ -768,7 +768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 0
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &318625721
 Transform:
   m_ObjectHideFlags: 0
@@ -998,6 +998,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 355010999}
+  - component: {fileID: 355011000}
+  - component: {fileID: 355011001}
   m_Layer: 0
   m_Name: scroll
   m_TagString: Untagged
@@ -1027,6 +1029,68 @@ Transform:
   - {fileID: 1298284831}
   m_Father: {fileID: 1576388056}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &355011000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355010998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 805ee35888fedeb4b8826c514f80e907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrolls: []
+  scrollPercentage: 0.5
+  scrollSpeed: 5
+  isScrollable: 1
+--- !u!61 &355011001
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355010998}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &356077987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,7 +1122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &356077989
 Transform:
   m_ObjectHideFlags: 0
@@ -1105,7 +1169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 0
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &365941673
 Transform:
   m_ObjectHideFlags: 0
@@ -1279,7 +1343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &410271614
 Transform:
   m_ObjectHideFlags: 0
@@ -1326,7 +1390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &412366140
 Transform:
   m_ObjectHideFlags: 0
@@ -1373,7 +1437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 0
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &419144568
 Transform:
   m_ObjectHideFlags: 0
@@ -1734,7 +1798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &519452057
 Transform:
   m_ObjectHideFlags: 0
@@ -2035,7 +2099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &550038706
 Transform:
   m_ObjectHideFlags: 0
@@ -2169,7 +2233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 0
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &578373792
 Transform:
   m_ObjectHideFlags: 0
@@ -2216,7 +2280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 0
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &593414999
 Transform:
   m_ObjectHideFlags: 0
@@ -2349,7 +2413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 0
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &661064760
 Transform:
   m_ObjectHideFlags: 0
@@ -2396,7 +2460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &663508662
 Transform:
   m_ObjectHideFlags: 0
@@ -2848,8 +2912,6 @@ GameObject:
   m_Component:
   - component: {fileID: 841442379}
   - component: {fileID: 841442382}
-  - component: {fileID: 841442381}
-  - component: {fileID: 841442380}
   m_Layer: 0
   m_Name: mask-tache
   m_TagString: Untagged
@@ -2872,66 +2934,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 355010999}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &841442380
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841442378}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.36, y: 34.53316}
-    newSize: {x: 20.36, y: 34.53316}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 20.36, y: 34.53316}
-  m_EdgeRadius: 0
---- !u!114 &841442381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 841442378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 719bbde18ea2556408704685588386a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawSize: 50
-  Drawing: 0
 --- !u!212 &841442382
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3082,8 +3084,6 @@ GameObject:
   m_Component:
   - component: {fileID: 988948936}
   - component: {fileID: 988948939}
-  - component: {fileID: 988948938}
-  - component: {fileID: 988948937}
   m_Layer: 0
   m_Name: mask-bougie
   m_TagString: Untagged
@@ -3100,72 +3100,12 @@ Transform:
   m_GameObject: {fileID: 988948935}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.19, y: -10.27, z: 0}
-  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_LocalPosition: {x: 4.387562, y: 5.1563787, z: 0}
+  m_LocalScale: {x: 9.91584, y: 9.91584, z: 9.91584}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 355010999}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &988948937
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 988948935}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20.36, y: 34.53316}
-    newSize: {x: 20.36, y: 34.53316}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 20.36, y: 34.53316}
-  m_EdgeRadius: 0
---- !u!114 &988948938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 988948935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 719bbde18ea2556408704685588386a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drawSize: 50
-  Drawing: 0
 --- !u!212 &988948939
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3209,7 +3149,7 @@ SpriteRenderer:
   m_SortingLayerID: -928480125
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7824689444812405744, guid: 9fbb83c23f3227547b3aa06d00341b31, type: 3}
+  m_Sprite: {fileID: 8412625726429558370, guid: f6c06438067f9db44bcdc18e07eff219, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3251,7 +3191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &1001662444
 Transform:
   m_ObjectHideFlags: 0
@@ -3298,7 +3238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 0
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &1084143146
 Transform:
   m_ObjectHideFlags: 0
@@ -3432,7 +3372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 0
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &1096598109
 Transform:
   m_ObjectHideFlags: 0
@@ -3695,7 +3635,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &1278708051
 Transform:
   m_ObjectHideFlags: 0
@@ -4437,7 +4377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 0
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &1589994251
 Transform:
   m_ObjectHideFlags: 0
@@ -4638,6 +4578,7 @@ GameObject:
   - component: {fileID: 1650885881}
   - component: {fileID: 1650885883}
   - component: {fileID: 1650885882}
+  - component: {fileID: 1650885884}
   m_Layer: 0
   m_Name: mask-fusain
   m_TagString: Untagged
@@ -4774,6 +4715,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drawSize: 50
   Drawing: 0
+--- !u!114 &1650885884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650885879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719bbde18ea2556408704685588386a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drawSize: 10
+  Drawing: 0
 --- !u!1 &1692386971
 GameObject:
   m_ObjectHideFlags: 0
@@ -4805,7 +4760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &1692386973
 Transform:
   m_ObjectHideFlags: 0
@@ -4852,7 +4807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &1697918806
 Transform:
   m_ObjectHideFlags: 0
@@ -5199,7 +5154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &1809764461
 Transform:
   m_ObjectHideFlags: 0
@@ -5625,7 +5580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &1982054007
 Transform:
   m_ObjectHideFlags: 0
@@ -5885,7 +5840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 0
   hDestination: 0
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &2028598331
 Transform:
   m_ObjectHideFlags: 0
@@ -6018,7 +5973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 0
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &2042913221
 Transform:
   m_ObjectHideFlags: 0
@@ -6151,7 +6106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cDestination: 1
   hDestination: 1
-  text: 
+  sprite: {fileID: 0}
 --- !u!4 &2134827337
 Transform:
   m_ObjectHideFlags: 0
