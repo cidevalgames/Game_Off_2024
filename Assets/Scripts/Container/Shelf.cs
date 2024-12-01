@@ -1,5 +1,6 @@
 using UnityEngine.EventSystems;
 using UnityEngine;
+using System.Linq;
 
 [RequireComponent(typeof(Collider2D), typeof(AudioSource))]
 public class Shelf : Container
@@ -17,15 +18,20 @@ public class Shelf : Container
     [SerializeField] private AudioClip onTakeSound;
     [SerializeField] private AudioClip onDragSound;
 
+    [HideInInspector] public bool isHoldingScroll = false;
+
     private bool _canHover = true;
     private bool _isDragging = false;
 
     protected Vector2 _basePosition;
     protected Vector2 _mousePositionFromObject;
+    private Vector2 _holdingScrollBasePosition;
 
     private AudioSource m_audioSource;
 
-    private GameObject _draggingScroll;
+    private GameObject _holdingScroll;
+
+    private int _holdingScrollIndex;
 
     protected virtual void Start()
     {
@@ -39,6 +45,9 @@ public class Shelf : Container
 
     protected virtual void Update()
     {
+        if (scrolls.Count == 0)
+            return;
+
         if (_canHover)
         {
             m_animation.Update(Time.deltaTime);
@@ -50,32 +59,82 @@ public class Shelf : Container
         }
     }
 
+    public void ShuffleList()
+    {
+        scrolls = scrolls.OrderBy(x => Random.value).ToList();
+    }
+
+    private void TakeScroll()
+    {
+        _holdingScroll = scrolls[0].gameObject;
+    }
+
     public virtual void OnBeginDrag()
     {
+        if (scrolls.Count == 0)
+            return;
+
         if (onTakeSound)
         {
             m_audioSource.clip = onTakeSound;
             m_audioSource.Play();
         }
+
+        TakeScroll();
+
+        FindFirstObjectByType<Desk>().EnableHovering();
+
+        _holdingScrollBasePosition = _holdingScroll.transform.position;
+
+        isHoldingScroll = true;
     }
 
     public virtual void OnEndDrag()
     {
+        if (scrolls.Count == 0)
+            return;
+
         if (onDragSound)
         {
             m_audioSource.clip = onDragSound;
             m_audioSource.Play();
         }
+
+        Desk desk = FindFirstObjectByType<Desk>();
+
+        if (desk.IsHovering())
+        {
+            Scroll scroll = scrolls[_holdingScrollIndex];
+
+            scroll.OnDropOnDesk();
+
+            desk.AddScroll(scroll);
+
+            scrolls.RemoveAt(_holdingScrollIndex);
+            _holdingScroll = null;
+        }
+        else
+        {
+            _holdingScroll.transform.position = _holdingScrollBasePosition;
+        }
+
+        FindFirstObjectByType<Desk>().DisableHovering();
     }
 
     public virtual void OnDragUpdate()
     {
+        if (scrolls.Count == 0)
+            return;
+
         Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector2(cursorPos.x, cursorPos.y) - _mousePositionFromObject;
+        _holdingScroll.transform.position = new Vector2(cursorPos.x, cursorPos.y);
     }
 
     public override void OnPointerEnter(PointerEventData eventData)
     {
+        if (scrolls.Count == 0)
+            return;
+
         if (!_canHover)
             return;
 
@@ -87,6 +146,9 @@ public class Shelf : Container
 
     public override void OnPointerExit(PointerEventData eventData)
     {
+        if (scrolls.Count == 0)
+            return;
+
         if (!_canHover)
             return;
 
@@ -112,18 +174,22 @@ public class Shelf : Container
 
     public override void OnPointerDown(PointerEventData eventData)
     {
+        if (scrolls.Count == 0)
+            return;
+
         _canHover = false;
         _isDragging = true;
 
         highlightsSpriteRenderer.enabled = false;
-
-        _mousePositionFromObject = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
         OnBeginDrag();
     }
 
     public override void OnPointerUp(PointerEventData eventData)
     {
+        if (scrolls.Count == 0)
+            return;
+
         _canHover = true;
         _isDragging = false;
 
@@ -132,7 +198,7 @@ public class Shelf : Container
         OnEndDrag();
     }
 
-    protected override bool AddScroll(Scroll scroll)
+    public override bool AddScroll(Scroll scroll)
     {
         if (!base.AddScroll(scroll)) return false;
         scroll.HideCompleteSprite();

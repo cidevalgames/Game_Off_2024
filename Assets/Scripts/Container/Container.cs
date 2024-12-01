@@ -16,7 +16,7 @@ public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitH
 
     }
 
-    protected virtual bool AddScroll(Scroll scroll)
+    public virtual bool AddScroll(Scroll scroll)
     {
         if (!IsScrollValid(scroll)) return false;
         scrolls.Add(scroll);

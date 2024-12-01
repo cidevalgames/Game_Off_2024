@@ -17,13 +17,15 @@ public abstract class Rack : Container
     [SerializeField] private AudioClip onTakeSound;
     [SerializeField] private AudioClip onDragSound;
 
-    private bool _canHover = true;
+    private bool _canHover = false;
     private bool _isDragging = false;
 
     protected Vector2 _basePosition;
     protected Vector2 _mousePositionFromObject;
 
     private AudioSource m_audioSource;
+
+    private bool _isHovering;
 
     protected virtual void Start()
     {
@@ -46,6 +48,21 @@ public abstract class Rack : Container
         {
             OnDragUpdate();
         }
+    }
+
+    public void EnableHovering()
+    {
+        _canHover = true;
+    }
+
+    public void DisableHovering()
+    {
+        _canHover = false;
+    }
+
+    public bool IsHovering()
+    {
+        return _isHovering;
     }
 
     public virtual void OnBeginDrag()
@@ -77,6 +94,8 @@ public abstract class Rack : Container
         if (!_canHover)
             return;
 
+        _isHovering = true;
+
         highlightsSpriteRenderer.enabled = true;
         highlightsSpriteRenderer.sprite = spriteHighlight0;
 
@@ -87,6 +106,8 @@ public abstract class Rack : Container
     {
         if (!_canHover)
             return;
+
+        _isHovering = false;
 
         highlightsSpriteRenderer.enabled = false;
     }
@@ -130,7 +151,7 @@ public abstract class Rack : Container
         OnEndDrag();
     }
 
-    protected override bool AddScroll(Scroll scroll)
+    public override bool AddScroll(Scroll scroll)
     {
         if (!base.AddScroll(scroll)) return false;
         scroll.HideCompleteSprite();

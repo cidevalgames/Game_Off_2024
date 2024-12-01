@@ -4,6 +4,8 @@ using UnityEngine;
 public class Desk : Container
 {
     [SerializeField] private SpriteRenderer highlightsSpriteRenderer;
+    [SerializeField] private GameObject scrollOnDesk;
+    [SerializeField] private SpriteRenderer scrollOnDeskSpriteRenderer;
 
     [Header("Animation")]
     [SerializeField] private Assets.Scripts.Animation.Animation m_animation;
@@ -16,12 +18,19 @@ public class Desk : Container
     [SerializeField] private AudioClip onTakeSound;
     [SerializeField] private AudioClip onDragSound;
 
-    private bool _canHover = true;
+    [HideInInspector] public bool isHoldingScroll = false;
+
+    private bool _canHover = false;
+
+    private GameObject _holdingScroll;
 
     protected Vector2 _basePosition;
     protected Vector2 _mousePositionFromObject;
+    private Vector2 _holdingScrollBasePosition;
 
     private AudioSource m_audioSource;
+
+    private bool _isHovering;
 
     protected virtual void Start()
     {
@@ -41,6 +50,26 @@ public class Desk : Container
         }
     }
 
+    public void EnableHovering()
+    {
+        _canHover = true;
+    }
+
+    public void DisableHovering()
+    {
+        _canHover = false;
+    }
+
+    public bool IsHovering()
+    {
+        return _isHovering;
+    }
+
+    private void TakeScroll()
+    {
+        _holdingScroll = scrolls[0].gameObject;
+    }
+
     public virtual void OnBeginDrag()
     {
         if (onTakeSound)
@@ -48,6 +77,15 @@ public class Desk : Container
             m_audioSource.clip = onTakeSound;
             m_audioSource.Play();
         }
+
+        TakeScroll();
+
+        FindFirstObjectByType<VillageRack>().EnableHovering();
+        FindFirstObjectByType<VilleRack>().EnableHovering();
+
+        _holdingScrollBasePosition = _holdingScroll.transform.position;
+
+        isHoldingScroll = true;
     }
 
     public virtual void OnEndDrag()
@@ -57,18 +95,56 @@ public class Desk : Container
             m_audioSource.clip = onDragSound;
             m_audioSource.Play();
         }
+
+        VillageRack villageRack = FindFirstObjectByType<VillageRack>();
+        VilleRack villeRack = FindFirstObjectByType<VilleRack>();
+
+        if (villageRack.IsHovering())
+        {
+            Scroll scroll = scrolls[0];
+
+            scroll.OnDropOnDesk();
+
+            villageRack.AddScroll(scroll);
+
+            scrolls.RemoveAt(0);
+            _holdingScroll = null;
+        }
+        else if (villeRack.IsHovering())
+        {
+            Scroll scroll = scrolls[0];
+
+            scroll.OnDropOnDesk();
+
+            villeRack.AddScroll(scroll);
+
+            scrolls.RemoveAt(0);
+            _holdingScroll = null;
+        }
+        else
+        {
+            _holdingScroll.transform.position = _holdingScrollBasePosition;
+        }
+
+        FindFirstObjectByType<VillageRack>().DisableHovering();
+        FindFirstObjectByType<VilleRack>().DisableHovering();
     }
 
     public virtual void OnDragUpdate()
     {
+        if (scrolls.Count == 0)
+            return;
+
         Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector2(cursorPos.x, cursorPos.y) - _mousePositionFromObject;
+        _holdingScroll.transform.position = new Vector2(cursorPos.x, cursorPos.y);
     }
 
     public override void OnPointerEnter(PointerEventData eventData)
     {
         if (!_canHover)
             return;
+
+        _isHovering = true;
 
         highlightsSpriteRenderer.enabled = true;
         highlightsSpriteRenderer.sprite = spriteHighlight0;
@@ -80,6 +156,8 @@ public class Desk : Container
     {
         if (!_canHover)
             return;
+
+        _isHovering = false;
 
         highlightsSpriteRenderer.enabled = false;
     }
@@ -103,11 +181,12 @@ public class Desk : Container
 
     public override void OnPointerDown(PointerEventData eventData)
     {
+        if (scrolls.Count == 0)
+            return;
+
         _canHover = false;
 
         highlightsSpriteRenderer.enabled = false;
-
-        _mousePositionFromObject = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
         OnBeginDrag();
     }
@@ -126,10 +205,15 @@ public class Desk : Container
         return scroll != null && !scrolls.Contains(scroll) && scrolls.Count == 0;
     }
 
-    protected override bool AddScroll(Scroll scroll)
+    public override bool AddScroll(Scroll scroll)
     {
         if (!base.AddScroll(scroll)) return false;
-        scroll.ShowCompleteSprite();
+
+        scrollOnDesk.SetActive(true);
+        scroll.transform.SetParent(scrollOnDeskSpriteRenderer.transform.parent, false);
+        scroll.transform.localScale = Vector3.one * 1.150722f;
+        scroll.transform.localPosition = new Vector3(0, -10.58f, 2.734f);
+
         return true;
     }
 }

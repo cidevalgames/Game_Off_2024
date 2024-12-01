@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Scroll : DevObject
 {
@@ -12,28 +13,44 @@ public class Scroll : DevObject
     [Header("Destination pour fin héroïque")]
     private EScrollDestination hDestination;
 
-    [SerializeField]
     [Header("Sprite du parchemin déroulé")]
-    private Sprite sprite;
+    public Sprite openSprite;
 
-    private Sprite _defaultSprite;
+    [Header("")]
+    [SerializeField] private UnityEvent onDropOnDesk;
+    [SerializeField] private UnityEvent onDropInRack;
 
-    const string DefaultSpritePath = "Sprites/Scenes/Bureau/Objects/parchemin clair";
+    private Sprite closedSprite;
+
+    private SpriteRenderer m_spriteRenderer;
+
+    private void Awake()
+    {
+        m_spriteRenderer = GetComponent<SpriteRenderer>();
+
+        closedSprite = m_spriteRenderer.sprite;
+    }
+
+    public void OnDropOnDesk()
+    {
+        onDropOnDesk.Invoke();
+    }
+
+    public void OnDropInRack()
+    {
+        onDropInRack.Invoke();
+    }
 
     public void ShowCompleteSprite()
     {
-        GetComponent<SpriteRenderer>().sprite = sprite;
+        m_spriteRenderer.sprite = openSprite;
+
+        
     }
 
     public void HideCompleteSprite()
     {
-        GetComponent<SpriteRenderer>().sprite = _defaultSprite;
-    }
-
-    private void Awake()
-    {
-        _defaultSprite = Resources.Load<Sprite>(DefaultSpritePath);
-        this.AddComponent<SpriteRenderer>();
+        m_spriteRenderer.sprite = closedSprite;
     }
 
     private void Start()

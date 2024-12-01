@@ -6,8 +6,8 @@ using UnityEngine;
 public class MyCursor : MonoBehaviour
 {
     [Header("Cursor textures")]
-    [SerializeField] private Sprite normalCursorSprite;
-    [SerializeField] private Sprite clickCursorSprite;
+    [SerializeField] private Sprite normalCursorSprite;    
+    [SerializeField] private Sprite clickCursorSprite; 
 
     private bool _cursorEnabled = false;
 
