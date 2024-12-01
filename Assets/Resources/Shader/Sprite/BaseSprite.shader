@@ -4,14 +4,15 @@ Shader "Custom/BaseSprite" {
         _Color ("Color Tint", Color) = (1,1,1,1)
     }
     SubShader {
-        Tags { "RenderType" = "Transparent" "Queue" = "Overlay-1" }
+        Tags { "RenderType" = "Transparent" "Queue" = "Overlay" }
 
         Pass {
             Stencil {
-                Ref 1            // Appliquer le DeskMask avec la valeur 1
-                Comp Equal       // Le sprite sera visible seulement dans la zone DeskMask
-                Pass Keep        // Conserver la valeur du stencil
+                Ref 2      // Base sprite will be visible only where stencil value is 2 (inside DeskMask area)
+                Comp Equal     // Render only where stencil value equals Ref 2 (DeskMask)
+                Pass Keep      // Keep the stencil buffer value as is
             }
+               
             ZWrite Off
             Blend SrcAlpha OneMinusSrcAlpha
 
@@ -19,6 +20,9 @@ Shader "Custom/BaseSprite" {
             #pragma vertex vert
             #pragma fragment frag
             #include "UnityCG.cginc"
+
+            sampler2D _MainTex;
+            float4 _Color;
 
             struct appdata_t {
                 float4 vertex : POSITION;
@@ -30,17 +34,14 @@ Shader "Custom/BaseSprite" {
                 float4 vertex : SV_POSITION;
             };
 
-            sampler2D _MainTex;
-            float4 _Color;
-
-            v2f vert (appdata_t v) {
+            v2f vert(appdata_t v) {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = v.texcoord;
                 return o;
             }
 
-            fixed4 frag (v2f i) : SV_Target {
+            fixed4 frag(v2f i) : SV_Target {
                 fixed4 col = tex2D(_MainTex, i.uv) * _Color;
                 return col;
             }

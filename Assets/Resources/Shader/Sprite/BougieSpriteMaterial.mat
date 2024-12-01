@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FusainMaterial
-  m_Shader: {fileID: 4800000, guid: 785434c4fa81cf94eb7b3a6c83f2344a, type: 3}
+  m_Name: BougieSpriteMaterial
+  m_Shader: {fileID: 4800000, guid: 0d6b8302a212f104ea6fac9d3b209950, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []

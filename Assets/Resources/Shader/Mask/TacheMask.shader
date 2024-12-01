@@ -1,4 +1,4 @@
-Shader "Custom/FusainMask" {
+Shader "Custom/TacheMask" {
     Properties {
         _MainTex ("Texture", 2D) = "white" {}
     }
@@ -6,7 +6,7 @@ Shader "Custom/FusainMask" {
         Tags { "RenderType" = "Opaque" "Queue" = "Geometry" }
         Pass {
             Stencil {
-                Ref 4          // FusainSprite is visible only where stencil value is 3 (both masks overlap)
+                Ref 3          // FusainSprite is visible only where stencil value is 3 (both masks overlap)
                 Comp Always    // Always pass the stencil test
                 Pass IncrSat   // Increment by 1 (second increment)
             }

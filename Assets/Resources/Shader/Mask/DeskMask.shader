@@ -7,11 +7,11 @@ Shader "Custom/DeskMask" {
 
         Pass {
             Stencil {
-                Ref 1           // DeskMask marque la zone avec la valeur 1
-                Comp Always     // Toujours passer le test de stencil
-                Pass Replace    // Remplace la valeur du stencil avec Ref 1
+                Ref 1          // DeskMask: Mark the zone with the value 2
+                Comp Always    // Always pass the stencil test
+                Pass IncrSat   // Replace the stencil buffer with Ref 2
             }
-            ColorMask 0         // Ne rend pas de couleur, juste le masque
+            ColorMask 0         // Don't render color, just the mask
             SetTexture[_MainTex] {
                 combine primary
             }

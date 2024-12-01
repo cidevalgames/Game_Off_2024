@@ -8,7 +8,7 @@ Shader "Custom/BougieMask" {
             Stencil {
                 Ref 2           // This is the stencil reference value
                 Comp Always     // Always write to the stencil buffer
-                Pass Replace    // Replace stencil buffer value with Ref
+                Pass IncrSat     // Replace stencil buffer value with Ref
             }
             ColorMask 0         // Don't render any visible color (mask only)
         }

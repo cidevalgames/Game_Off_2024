@@ -1,4 +1,4 @@
-Shader "Custom/FusainSprite" {
+Shader "Custom/BougieSprite" {
     Properties {
         _MainTex ("Texture", 2D) = "white" {}
         _Color ("Color Tint", Color) = (1,1,1,1)
@@ -8,7 +8,7 @@ Shader "Custom/FusainSprite" {
         
         Pass {
             Stencil {
-                Ref 5          // Fusain sprite is visible only where stencil value is 3 (overlap of both DeskMask and FusainMask)
+                Ref 3         // Fusain sprite is visible only where stencil value is 3 (overlap of both DeskMask and FusainMask)
                 Comp Equal     // Check if the stencil value equals 3 (both masks are present)
                 Pass Keep      // Keep the stencil value intact
             }
