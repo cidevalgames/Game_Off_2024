@@ -1,7 +1,9 @@
 using System;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class Scroll : DevObject
 {
@@ -35,6 +37,8 @@ public class Scroll : DevObject
     private VillageRack m_villageRack;
     private VilleRack m_villeRack;
 
+    private Rack[] racks = new Rack[2];
+
     private void Awake()
     {
         m_spriteRenderer = GetComponent<SpriteRenderer>();
@@ -45,6 +49,8 @@ public class Scroll : DevObject
         m_desk = FindFirstObjectByType<Desk>();
         m_villageRack = FindFirstObjectByType<VillageRack>();
         m_villeRack = FindFirstObjectByType<VilleRack>();
+
+        racks = FindObjectsByType<Rack>(FindObjectsInactive.Include, FindObjectsSortMode.None);
     }
 
     private void Update()
@@ -55,12 +61,9 @@ public class Scroll : DevObject
         OnDragUpdate();
     }
 
+    #region Dragging
     public void OnBeginDrag(Container container)
     {
-        _isDragging = true;
-
-        _basePos = transform.position;
-
         if (container == m_shelf)
         {
             m_desk.EnableHovering();
@@ -74,6 +77,10 @@ public class Scroll : DevObject
 
             HideCompleteSprite();
         }
+
+        _isDragging = true;
+
+        _basePos = transform.position;
     }
 
     private void OnDragUpdate()
@@ -92,6 +99,8 @@ public class Scroll : DevObject
             m_desk.AddScroll(this);
             m_desk.DisableHovering();
 
+            container.RemoveScroll(this);
+
             ShowCompleteSprite();
 
             onDropOnDesk.Invoke();
@@ -103,12 +112,16 @@ public class Scroll : DevObject
                 m_villageRack.AddScroll(this);
                 m_villageRack.DisableHovering();
 
+                m_villageRack.RemoveScroll(this);
+
                 onDropInRack.Invoke();
             }
             else if (m_villeRack.IsHovering())
             {
                 m_villeRack.AddScroll(this);
                 m_villeRack.DisableHovering();
+
+                m_villageRack.RemoveScroll(this);
 
                 onDropInRack.Invoke();
             }
@@ -125,6 +138,7 @@ public class Scroll : DevObject
             transform.position = _basePos;
         }
     }
+    #endregion
 
     public void ShowCompleteSprite()
     {

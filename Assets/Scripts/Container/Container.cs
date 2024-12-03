@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using Assets.Scripts.Desk.Objects;
 using Assets.Scripts.Animation;
 
+[RequireComponent(typeof(Collider2D), typeof(AudioSource))]
 public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
     [Header("Parchemins présents dans le conteneur au lancement du jeu")]
@@ -75,8 +76,12 @@ public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitH
     #region Event Systems
     public virtual void OnPointerEnter(PointerEventData eventData)
     {
+        print("Hovering");
+
         if (!_canHover)
             return;
+
+        print("Can hover");
 
         _isHovering = true;
 
@@ -163,6 +168,11 @@ public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitH
         if (!IsScrollValid(scroll)) return false;
         scrolls.Add(scroll);
         return true;
+    }
+
+    public virtual void RemoveScroll(Scroll scroll)
+    {
+        scrolls.Remove(scroll);
     }
 
     protected virtual bool IsScrollValid(Scroll scroll)

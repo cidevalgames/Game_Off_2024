@@ -120,6 +120,8 @@ public class DialogTextPanel : DevObject, IPointerClickHandler
         foreach (var obj in FindObjectsByType<Container>(FindObjectsInactive.Include, FindObjectsSortMode.None))
         {
             obj.enabled = true;
+
+            Debug.Log(obj.name);
         }
     }
 
