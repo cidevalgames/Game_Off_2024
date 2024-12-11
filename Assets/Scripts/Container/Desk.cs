@@ -16,6 +16,22 @@ public class Desk : Container
     }
     #endregion
 
+    public override void OnDrop(PointerEventData eventData)
+    {
+        Scroll holdingScroll = eventData.selectedObject.GetComponent<Scroll>();
+
+        Debug.Log(holdingScroll);
+
+        AddScroll(holdingScroll);
+        DisableHovering();
+
+        FindFirstObjectByType<Shelf>().RemoveScroll(holdingScroll);
+
+        holdingScroll.ShowCompleteSprite();
+
+        //holdingScroll.onDropOnDesk.Invoke();
+    }
+
     protected override bool IsScrollValid(Scroll scroll)
     {
         return scroll != null && !scrolls.Contains(scroll) && scrolls.Count == 0;

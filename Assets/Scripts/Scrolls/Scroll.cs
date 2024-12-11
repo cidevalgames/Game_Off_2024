@@ -1,8 +1,8 @@
 using System;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
 public class Scroll : DevObject
@@ -53,15 +53,8 @@ public class Scroll : DevObject
         racks = FindObjectsByType<Rack>(FindObjectsInactive.Include, FindObjectsSortMode.None);
     }
 
-    private void Update()
-    {
-        if (!_isDragging)
-            return;
-
-        OnDragUpdate();
-    }
-
     #region Dragging
+
     public void OnBeginDrag(Container container)
     {
         if (container == m_shelf)
@@ -83,12 +76,6 @@ public class Scroll : DevObject
         _basePos = transform.position;
     }
 
-    private void OnDragUpdate()
-    {
-        Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        transform.position = new Vector2(cursorPos.x, cursorPos.y);
-    }
-
     public void OnEndDrag(Container container)
     {
         _isDragging = false;
@@ -96,34 +83,34 @@ public class Scroll : DevObject
         // Ajoute ce scroll selon d'où il vient et où il est déposé
         if (container == m_shelf && m_desk.IsHovering())
         {
-            m_desk.AddScroll(this);
-            m_desk.DisableHovering();
+            //m_desk.AddScroll(this);
+            //m_desk.DisableHovering();
 
-            container.RemoveScroll(this);
+            //container.RemoveScroll(this);
 
-            ShowCompleteSprite();
+            //ShowCompleteSprite();
 
-            onDropOnDesk.Invoke();
+            //onDropOnDesk.Invoke();
         }
         else if (container == m_desk)
         {
             if (m_villageRack.IsHovering())
             {
-                m_villageRack.AddScroll(this);
-                m_villageRack.DisableHovering();
+                //m_villageRack.AddScroll(this);
+                //m_villageRack.DisableHovering();
 
-                m_villageRack.RemoveScroll(this);
+                //m_villageRack.RemoveScroll(this);
 
-                onDropInRack.Invoke();
+                //onDropInRack.Invoke();
             }
             else if (m_villeRack.IsHovering())
             {
-                m_villeRack.AddScroll(this);
-                m_villeRack.DisableHovering();
+                //m_villeRack.AddScroll(this);
+                //m_villeRack.DisableHovering();
 
-                m_villageRack.RemoveScroll(this);
+                //m_villageRack.RemoveScroll(this);
 
-                onDropInRack.Invoke();
+                //onDropInRack.Invoke();
             }
             else
             {
@@ -138,7 +125,14 @@ public class Scroll : DevObject
             transform.position = _basePos;
         }
     }
+
     #endregion
+
+    public void OnDrag()
+    {
+        Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = new Vector2(cursorPos.x, cursorPos.y);
+    }
 
     public void ShowCompleteSprite()
     {
@@ -153,5 +147,13 @@ public class Scroll : DevObject
     private void Start()
     {
         HideCompleteSprite();
+    }
+
+    private void Update()
+    {
+        if (!_isDragging)
+            return;
+
+        ExecuteEvents.Execute(gameObject, new PointerEventData(EventSystem.current), ExecuteEvents.dragHandler);
     }
 }

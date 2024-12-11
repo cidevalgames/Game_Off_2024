@@ -5,7 +5,7 @@ using Assets.Scripts.Desk.Objects;
 using Assets.Scripts.Animation;
 
 [RequireComponent(typeof(Collider2D), typeof(AudioSource))]
-public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
+public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IDragHandler, IDropHandler
 {
     [Header("Parchemins présents dans le conteneur au lancement du jeu")]
     [SerializeField]
@@ -38,6 +38,7 @@ public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitH
     private int _holdingScrollIndex;
 
     #region Primary Functions
+
     protected virtual void Start()
     {
         m_animation.UpdateAction = UpdateAnimation;
@@ -53,16 +54,10 @@ public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitH
             m_animation.Update(Time.deltaTime);
         }
     }
+
     #endregion
 
     #region Dragging
-    public virtual void OnBeginDrag()
-    {
-        if (scrolls.Count == 0)
-            return;
-
-        scrolls[0].OnBeginDrag(this);
-    }
 
     public virtual void OnEndDrag()
     {
@@ -80,8 +75,6 @@ public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitH
 
         if (!_canHover)
             return;
-
-        print("Can hover");
 
         _isHovering = true;
 
@@ -107,7 +100,7 @@ public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitH
 
         highlightsSpriteRenderer.enabled = false;
 
-        OnBeginDrag();
+        scrolls[0].OnBeginDrag(this);
     }
 
     public virtual void OnPointerUp(PointerEventData eventData)
@@ -118,6 +111,17 @@ public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitH
 
         OnEndDrag();
     }
+
+    public virtual void OnDrag(PointerEventData eventData)
+    {
+        scrolls[0].OnDrag();
+    }
+
+    public virtual void OnDrop(PointerEventData eventData)
+    {
+        
+    }
+
     #endregion
 
     #region Animation
@@ -155,6 +159,7 @@ public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitH
     }
 
     #region Scrolls
+
     protected void TransferScrollTo(Scroll scroll, Container transferTarget)
     {
         if (!transferTarget.AddScroll(scroll)) return;
@@ -179,5 +184,6 @@ public abstract class Container : DevObject, IPointerEnterHandler, IPointerExitH
     {
         return scroll != null && !scrolls.Contains(scroll);
     }
+
     #endregion
 }

@@ -23,5 +23,17 @@ public abstract class Rack : Container
     {
         base.OnPointerUp(eventData);
     }
+
+    public override void OnDrop(PointerEventData eventData)
+    {
+        if (!IsHovering())
+            return;
+
+        Scroll holdingScroll = eventData.selectedObject.GetComponent<Scroll>();
+
+        AddScroll(holdingScroll);
+        DisableHovering();
+    }
+
     #endregion
 }
